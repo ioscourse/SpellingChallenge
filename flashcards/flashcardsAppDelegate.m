@@ -32,7 +32,7 @@
     
     [fileManager copyItemAtPath:databasePathFromApp toPath:databasepath error:nil];
 }
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+-(BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // 4) Add Launch options
     self.databasename = @"cards.sqlite";

@@ -19,7 +19,7 @@
                             </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vFv-Gf-7YD">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Add Word List">
+                                <state key="normal" title="Add Word List to Database">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -103,7 +103,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="325" y="-550"/>
+            <point key="canvasLocation" x="-919" y="-812"/>
         </scene>
         <!--Add Words View Controller-->
         <scene sceneID="eOj-2c-jcf">
@@ -277,7 +277,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I3L-2X-oX3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="695" y="-550"/>
+            <point key="canvasLocation" x="971" y="-802"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="pKc-l1-lsB">
@@ -317,7 +317,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cQ5-Zo-kn9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-41" y="-544"/>
+            <point key="canvasLocation" x="-47" y="248"/>
         </scene>
         <!--Flashcards First View Controller-->
         <scene sceneID="Obs-pd-zjg">
@@ -409,7 +409,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8oQ-OW-ASo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1207" y="-561"/>
+            <point key="canvasLocation" x="-687" y="-100"/>
         </scene>
         <!--Flashcards Second View Controller - Second-->
         <scene sceneID="13">
@@ -443,13 +443,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="fyf-g8-0oa" firstAttribute="top" secondItem="ZPx-6r-ieb" secondAttribute="bottom" type="default" id="2TF-Fj-IFw"/>
                             <constraint firstItem="ZPx-6r-ieb" firstAttribute="top" secondItem="17" secondAttribute="top" type="default" id="6hs-GK-K2H"/>
+                            <constraint firstAttribute="bottom" secondItem="fyf-g8-0oa" secondAttribute="bottom" constant="5" id="Aa5-p3-HgC"/>
+                            <constraint firstItem="fyf-g8-0oa" firstAttribute="centerX" secondItem="ZPx-6r-ieb" secondAttribute="centerX" type="default" id="BdN-ta-45z"/>
+                            <constraint firstItem="fyf-g8-0oa" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="5" id="Ge2-yV-9Og"/>
                             <constraint firstItem="ZPx-6r-ieb" firstAttribute="leading" secondItem="17" secondAttribute="leading" type="default" id="SxL-wL-q8f"/>
+                            <constraint firstItem="fyf-g8-0oa" firstAttribute="top" secondItem="ZPx-6r-ieb" secondAttribute="bottom" type="default" id="YQr-l6-VJQ"/>
                             <constraint firstItem="ZPx-6r-ieb" firstAttribute="trailing" secondItem="17" secondAttribute="trailing" type="default" id="cyY-m9-fLc"/>
-                            <constraint firstItem="fyf-g8-0oa" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="5" id="ksb-h5-zzm"/>
-                            <constraint firstItem="fyf-g8-0oa" firstAttribute="centerX" secondItem="ZPx-6r-ieb" secondAttribute="centerX" type="default" id="ltL-g3-MQc"/>
-                            <constraint firstAttribute="bottom" secondItem="fyf-g8-0oa" secondAttribute="bottom" constant="5" id="qf5-yP-fDg"/>
                         </constraints>
                     </view>
                     <nil key="simulatedBottomBarMetrics"/>
@@ -460,7 +460,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="325" y="86"/>
+            <point key="canvasLocation" x="504" y="-74"/>
         </scene>
         <!--Select List View Controller-->
         <scene sceneID="uka-Qu-Zzl">
@@ -509,70 +509,19 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GFW-eW-XUH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="695" y="109"/>
+            <point key="canvasLocation" x="237" y="-904"/>
         </scene>
     </scenes>
     <resources>
         <image name="first" width="16" height="16"/>
     </resources>
-    <classes>
-        <class className="AddWordsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddWordsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="btnAddWords:"/>
-                <relationship kind="action" name="btnDelete:"/>
-                <relationship kind="action" name="doneEditing:"/>
-                <relationship kind="action" name="playAudio:"/>
-                <relationship kind="action" name="recordAudio:"/>
-                <relationship kind="action" name="stopAudio:"/>
-                <relationship kind="outlet" name="AddWordsPicker" candidateClass="UIPickerView"/>
-                <relationship kind="outlet" name="ScrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="playAudio" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="recordAudio" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="tblView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="txtAddWords" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="SelectListViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SelectListViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="TableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="flashcardsFirstViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/flashcardsFirstViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="btnSave:"/>
-                <relationship kind="action" name="doneEditing:"/>
-                <relationship kind="outlet" name="scrollview" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="txtListName" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="flashcardsSecondViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/flashcardsSecondViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="doneEditing:"/>
-                <relationship kind="action" name="stopAudio:"/>
-                <relationship kind="outlet" name="ScrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="gameViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/gameViewController.h"/>
-        </class>
-        <class className="homeViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/homeViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="rd1-0u-38c"/>
+        <segue reference="ODv-11-7cb"/>
         <segue reference="sB1-m3-Sft"/>
     </inferredMetricsTieBreakers>
 </document>

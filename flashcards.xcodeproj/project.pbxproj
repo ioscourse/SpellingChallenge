@@ -54,12 +54,12 @@
 		1218A537171F628E0028B97A /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		1218A539171F628E0028B97A /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		1218A53C171F628E0028B97A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		1218A53E171F628E0028B97A /* flashcardsFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = flashcardsFirstViewController.h; sourceTree = "<group>"; };
-		1218A53F171F628E0028B97A /* flashcardsFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = flashcardsFirstViewController.m; sourceTree = "<group>"; };
+		1218A53E171F628E0028B97A /* flashcardsFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = flashcardsFirstViewController.h; path = flashcards/flashcardsFirstViewController.h; sourceTree = "<group>"; };
+		1218A53F171F628E0028B97A /* flashcardsFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = flashcardsFirstViewController.m; path = flashcards/flashcardsFirstViewController.m; sourceTree = "<group>"; };
 		1218A541171F628E0028B97A /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		1218A543171F628E0028B97A /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		1218A545171F628E0028B97A /* flashcardsSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = flashcardsSecondViewController.h; sourceTree = "<group>"; };
-		1218A546171F628E0028B97A /* flashcardsSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = flashcardsSecondViewController.m; sourceTree = "<group>"; };
+		1218A545171F628E0028B97A /* flashcardsSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = flashcardsSecondViewController.h; path = flashcards/flashcardsSecondViewController.h; sourceTree = "<group>"; };
+		1218A546171F628E0028B97A /* flashcardsSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = flashcardsSecondViewController.m; path = flashcards/flashcardsSecondViewController.m; sourceTree = "<group>"; };
 		1218A548171F628E0028B97A /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		1218A54A171F628E0028B97A /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		1218A552171F6A3C0028B97A /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
@@ -106,8 +106,10 @@
 			isa = PBXGroup;
 			children = (
 				120DB2AF172180A2008EB64C /* AVFoundation.framework */,
-				1242508817211488002A09ED /* game */,
 				12425084172112B3002A09ED /* home */,
+				FC29A968172750C30057E6CD /* flashCardsFirst */,
+				FC29A969172751020057E6CD /* flashCardsSecond */,
+				1242508817211488002A09ED /* game */,
 				1218A569171F6BA20028B97A /* selectlist */,
 				1218A568171F6B910028B97A /* addwords */,
 				1218A563171F6AAF0028B97A /* MessageUI.framework */,
@@ -143,12 +145,8 @@
 				1218A532171F628E0028B97A /* flashcardsAppDelegate.h */,
 				1218A533171F628E0028B97A /* flashcardsAppDelegate.m */,
 				1218A53B171F628E0028B97A /* MainStoryboard.storyboard */,
-				1218A53E171F628E0028B97A /* flashcardsFirstViewController.h */,
-				1218A53F171F628E0028B97A /* flashcardsFirstViewController.m */,
 				1218A541171F628E0028B97A /* first.png */,
 				1218A543171F628E0028B97A /* first@2x.png */,
-				1218A545171F628E0028B97A /* flashcardsSecondViewController.h */,
-				1218A546171F628E0028B97A /* flashcardsSecondViewController.m */,
 				1218A548171F628E0028B97A /* second.png */,
 				1218A54A171F628E0028B97A /* second@2x.png */,
 				1218A52A171F628E0028B97A /* Supporting Files */,
@@ -223,6 +221,24 @@
 				1242508A1721149D002A09ED /* gameViewController.m */,
 			);
 			name = game;
+			sourceTree = "<group>";
+		};
+		FC29A968172750C30057E6CD /* flashCardsFirst */ = {
+			isa = PBXGroup;
+			children = (
+				1218A53E171F628E0028B97A /* flashcardsFirstViewController.h */,
+				1218A53F171F628E0028B97A /* flashcardsFirstViewController.m */,
+			);
+			name = flashCardsFirst;
+			sourceTree = "<group>";
+		};
+		FC29A969172751020057E6CD /* flashCardsSecond */ = {
+			isa = PBXGroup;
+			children = (
+				1218A545171F628E0028B97A /* flashcardsSecondViewController.h */,
+				1218A546171F628E0028B97A /* flashcardsSecondViewController.m */,
+			);
+			name = flashCardsSecond;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
