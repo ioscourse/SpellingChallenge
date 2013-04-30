@@ -5,7 +5,7 @@
 //  Created by Charles Konkol on 4/17/13.
 //  Copyright (c) 2013 RVC Student. All rights reserved.
 //
-//??
+// Called from SelectView Controller
 #import "flashcardsSecondViewController.h"
 #import "FMDatabase.h"
 #import "FMResultSet.h"
@@ -38,6 +38,7 @@ UITextField * textFieldRounded;
     
     //FMResultSet *results = [database executeQuery:sql, WherePath];
     FMResultSet *results = [database executeQuery:sql];
+    NSLog(@"2nd View Controller results value %@",results);
     NSLog(@"2nd View Controller sql: %@",NameID);
     // FMResultSet *results = [database executeQuery:@"select * from MyWords where NameID= "@NameID];
     CGFloat row=0;
@@ -73,13 +74,19 @@ UITextField * textFieldRounded;
         //set the origin of the frame reference
                         
         //set the button title for the normal state
-        [self.myButton setTitle:@"Press"forState:UIControlStateNormal];
+        [self.myButton setTitle:@"Press"
+                       forState:UIControlStateNormal];
         //set the button title for when the finger is pressing it down
-        [self.myButton setTitle:Word forState:UIControlStateHighlighted];
+        [self.myButton setTitle:Word
+                       forState:UIControlStateHighlighted];
         //add action to capture the button press down event
-        [self.myButton addTarget:self action:@selector(buttonIsPressed:)forControlEvents:UIControlEventTouchDown];
+        [self.myButton addTarget:self
+                          action:@selector(buttonIsPressed:)
+                forControlEvents:UIControlEventTouchDown];
         //add action to capture when the button is released
-        [self.myButton addTarget:self action:@selector(buttonIsReleased:)forControlEvents:UIControlEventTouchUpInside];
+        [self.myButton addTarget:self
+                          action:@selector(buttonIsReleased:)
+                forControlEvents:UIControlEventTouchUpInside];
         //set button tag
         [self.myButton setTag:[WordsID intValue]];
         //add the button to the view
@@ -102,6 +109,7 @@ UITextField * textFieldRounded;
         
         textFieldRounded.returnKeyType = UIReturnKeyDone;  // typing return key
         
+        // This displays the 'word' when the button is pressed down
         textFieldRounded.accessibilityIdentifier = Word;
         
         textFieldRounded.clearButtonMode = UITextFieldViewModeWhileEditing; // has a clear ‘x’ button to the right
@@ -109,7 +117,9 @@ UITextField * textFieldRounded;
         //add action to capture the button press down event
 
         // editing ended:
-        [textFieldRounded addTarget:self action:@selector(textIsDone:) forControlEvents:UIControlEventEditingDidEnd];
+        [textFieldRounded addTarget:self
+                             action:@selector(textIsDone:)
+                   forControlEvents:UIControlEventEditingDidEnd];
        
         //[self.view addSubview:textFieldRounded];
         [ScrollView addSubview:textFieldRounded];
@@ -123,36 +133,41 @@ UITextField * textFieldRounded;
     [results close]; //VERY IMPORTANT!
     [database close];
     
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
-                                   initWithTarget:self
-                                   action:@selector(dismissKeyboard)];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self
+                                                                         action:@selector(dismissKeyboard)];
     
     [self.view addGestureRecognizer:tap];
 }
--(UIView *) viewForZoomingInScrollView:(UIScrollView *)scrollView {
+-(UIView *) viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
     return ScrollView;
 }
 
--(BOOL)textFieldShouldReturn:(UITextField *)theTextField {
+-(BOOL)textFieldShouldReturn:(UITextField *)theTextField
+{
     [theTextField resignFirstResponder];
-    
     return YES;
 }
--(void)textFieldDidBeginEditing:(UITextField *)textField {
+-(void)textFieldDidBeginEditing:(UITextField *)textField
+{
     CGPoint scrollPoint = CGPointMake(0, textField.frame.origin.y);
     [ScrollView setContentOffset:scrollPoint animated:YES];
 }
 
--(void)textFieldDidEndEditing:(UITextField *)textField {
+// Why is this duplicated?
+-(void)textFieldDidEndEditing:(UITextField *)textField
+{
     [ScrollView setContentOffset:CGPointZero animated:YES];
 }
--(void) textIsDone:(UITextField *)paramSender{
+-(void) textIsDone:(UITextField *)paramSender
+{
     NSString *TryWord = paramSender.accessibilityIdentifier;
     NSString *RealWord = paramSender.text;
     NSLog(@"2nd View Controller TryWord is: %@",TryWord);
     if ([RealWord isEqualToString:TryWord])
     {
-    paramSender.backgroundColor = [UIColor greenColor];
+        paramSender.backgroundColor = [UIColor greenColor];
+        //add scoring here
     }
     else
     {
@@ -163,14 +178,17 @@ UITextField * textFieldRounded;
     paramSender.backgroundColor = [UIColor whiteColor];
     }
 }
--(void) buttonIsPressed:(UIButton *)paramSender{
+-(void) buttonIsPressed:(UIButton *)paramSender
+{
     NSLog(@"2nd View Controller WordsID is: %d",paramSender.tag);
     [self InitializeAudioFile: [NSString stringWithFormat:@"%d%@", paramSender.tag, @".m4a"]];
     [self PlayAudio];
 }
 
--(void) buttonIsReleased:(UIButton *)paramSender{
-    switch (paramSender.tag) {
+-(void) buttonIsReleased:(UIButton *)paramSender
+{
+    switch (paramSender.tag)
+    {
         case 1:
     NSLog(@"2nd View Controller Show Score");
         break;
@@ -179,14 +197,17 @@ UITextField * textFieldRounded;
         break;
     }
 }
--(void)dismissKeyboard {
+-(void)dismissKeyboard
+{
     [textFieldRounded resignFirstResponder];
 }
--(void)textViewDidBeginEditing:(UITextView *)textView {
+-(void)textViewDidBeginEditing:(UITextView *)textView
+{
     CGPoint scrollPoint = CGPointMake(0, textView.frame.origin.y);
     [ScrollView setContentOffset:scrollPoint animated:YES];
 }
--(void)textViewDidEndEditing:(UITextView *)textView {
+-(void)textViewDidEndEditing:(UITextView *)textView
+{
     [ScrollView setContentOffset:CGPointZero animated:YES];
 }
 -(IBAction)doneEditing:(id)sender
@@ -207,7 +228,8 @@ UITextField * textFieldRounded;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(void)dealloc {
+-(void)dealloc
+{
     [textFieldRounded release];
     [ScrollView release];
     [super dealloc];
@@ -243,7 +265,8 @@ UITextField * textFieldRounded;
     recorder.delegate = self;
     recorder.meteringEnabled = YES;
 }
--(void) audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
+-(void) audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
+{
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Got it?"
                                                     message: @"Now, Type in Word"
                                                    delegate: nil
@@ -257,7 +280,7 @@ UITextField * textFieldRounded;
     [player setDelegate:self];
     [player play];
 }
--(IBAction)stopAudio:(id)sender
+-(IBAction) stopAudio:(id)sender
 {
     [recorder stop];
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];

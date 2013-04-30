@@ -36,6 +36,8 @@
 		1242508B1721149D002A09ED /* gameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1242508A1721149D002A09ED /* gameViewController.m */; };
 		1264CFBC1720F8A90020C6EF /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1218A561171F6A540028B97A /* libsqlite3.0.dylib */; };
 		129BC8D41722E99C002797B8 /* cards.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 129BC8D31722E99C002797B8 /* cards.sqlite */; };
+		FCE47A78172ACE3E00C92F1E /* testViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE47A77172ACE3E00C92F1E /* testViewController.m */; };
+		FCE47A7B172ACE5600C92F1E /* testTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE47A7A172ACE5600C92F1E /* testTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +85,10 @@
 		124250891721149D002A09ED /* gameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gameViewController.h; sourceTree = "<group>"; };
 		1242508A1721149D002A09ED /* gameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = gameViewController.m; sourceTree = "<group>"; };
 		129BC8D31722E99C002797B8 /* cards.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = cards.sqlite; sourceTree = "<group>"; };
+		FCE47A76172ACE3E00C92F1E /* testViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testViewController.h; sourceTree = "<group>"; };
+		FCE47A77172ACE3E00C92F1E /* testViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testViewController.m; sourceTree = "<group>"; };
+		FCE47A79172ACE5600C92F1E /* testTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testTableViewController.h; sourceTree = "<group>"; };
+		FCE47A7A172ACE5600C92F1E /* testTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +111,8 @@
 		1218A517171F628E0028B97A = {
 			isa = PBXGroup;
 			children = (
+				FCE47A75172ACDF900C92F1E /* TestView */,
+				FCE47A74172ACDDC00C92F1E /* TestTable */,
 				120DB2AF172180A2008EB64C /* AVFoundation.framework */,
 				12425084172112B3002A09ED /* home */,
 				FC29A968172750C30057E6CD /* flashCardsFirst */,
@@ -241,6 +249,24 @@
 			name = flashCardsSecond;
 			sourceTree = "<group>";
 		};
+		FCE47A74172ACDDC00C92F1E /* TestTable */ = {
+			isa = PBXGroup;
+			children = (
+				FCE47A79172ACE5600C92F1E /* testTableViewController.h */,
+				FCE47A7A172ACE5600C92F1E /* testTableViewController.m */,
+			);
+			name = TestTable;
+			sourceTree = "<group>";
+		};
+		FCE47A75172ACDF900C92F1E /* TestView */ = {
+			isa = PBXGroup;
+			children = (
+				FCE47A76172ACE3E00C92F1E /* testViewController.h */,
+				FCE47A77172ACE3E00C92F1E /* testViewController.m */,
+			);
+			name = TestView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -326,6 +352,8 @@
 				1218A575171F6C270028B97A /* SelectListViewController.m in Sources */,
 				12425087172112CB002A09ED /* homeViewController.m in Sources */,
 				1242508B1721149D002A09ED /* gameViewController.m in Sources */,
+				FCE47A78172ACE3E00C92F1E /* testViewController.m in Sources */,
+				FCE47A7B172ACE5600C92F1E /* testTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

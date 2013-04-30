@@ -1,23 +1,53 @@
 //
-//  SelectListViewController.m
+//  testTableViewController.m
 //  flashcards
 //
-//  Created by Charles Konkol on 4/17/13.
+//  Created by Thomas Kinser on 4/26/13.
 //  Copyright (c) 2013 RVC Student. All rights reserved.
 //
-//Called from the 'Play Word Game' button.
-#import "SelectListViewController.h"
+/*#import "testTableViewController.h"
+
+@interface testTableViewController ()
+
+@end
+
+@implementation testTableViewController
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+	// Do any additional setup after loading the view.
+}
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+@end
+*/
+#import "testTableViewController.h"
 #import "flashcardsSecondViewController.h"
 #import "FMDatabase.h"
 #import "FMResultSet.h"
 
-@interface SelectListViewController ()
+@interface testTableViewController ()
 {
     NSMutableArray *_objects;
 }
 @end
 
-@implementation SelectListViewController
+@implementation testTableViewController
 
 @synthesize TableView;
 
@@ -26,15 +56,13 @@
     self = [super initWithStyle:style];
     if (self)
     {
-    // Custom initialization
+        // Custom initialization
     }
     return self;
 }
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    // Cycles through the SqlLite Database 'cards.sqlite' and populates the array with the NameID and
-    // the title for all of the objects in the array.  Not sure how while loop works.
     listOfData = [[NSMutableArray alloc] init];
     listOfNameID = [[NSMutableArray alloc] init];
 	// Do any additional setup after loading the view.
@@ -60,36 +88,48 @@
     [results close]; //VERY IMPORTANT!
     [database close];
 }
+
 -(void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 #pragma mark - Table view data source
 
+// Not sure why this is here and return is set for 1
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    // Return the number of sections.  Required for UITableViewDataSource protocol
     NSLog(@"SelectList ViewController - Start NSInteger");
     return 1;
 }
 
+
+// Mandatory for the UITableViewDataSource Protocol per page 168.  Returns the number of rows in the section.
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.  Required for UITableViewDataSource protocol
     return [listOfData count];
     NSLog(@"SelectList ViewController - Stop NSInteger");
 }
 
+// Mandatory for the UITableViewDataSource Protocol per page 168.  Insert individual row into table view
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
+    // Try to get a reusable cell
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    // Create new cell if no reusable cell is available
+    if (cell == nil)
+    {
+        cell = [[[UITableViewCell alloc]
+                initWithStyle:(UITableViewCellStyleDefault) reuseIdentifier:CellIdentifier]
+                autorelease];
+    }
+    // Set the text to display for the cell
     cell.textLabel.text = [listOfData objectAtIndex:[indexPath row]];
-    NSLog(@"SelectList ViewController cell.textLabel.text value: %@",cell);
     return cell;
 }
-/* Not sure what this code does - did not write to NSLog so I commented it out.
+
 #pragma mark - Table view delegate
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -97,14 +137,13 @@
     NSLog(@"SelectList ViewController tableView Section Row Selected = %i",indexPath.row);
     
 }
-*/
+
+// Sends control to external storyboard.  Modal connection must be made on the storyboard|viewController|cell to that external storyboard
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     @try
     {
         [segue.destinationViewController  setNameID:[listOfNameID objectAtIndex:[self.tableView.indexPathForSelectedRow row]]];
-        
-        
         NSLog(@"SelectList ViewController @try section - prepareForSegue");
     }
     @catch (NSException *exception)
@@ -117,4 +156,5 @@
     [UITableView release];
     [super dealloc];
 }
+
 @end
