@@ -1,5 +1,5 @@
 //
-//  SelectListViewController.h
+//  takeTestViewController.h
 //  flashcards
 //
 //  Created by Charles Konkol on 4/17/13.
@@ -8,7 +8,7 @@
 //Called from the 'Play Word Game' button.
 #import <UIKit/UIKit.h>
 
-@interface SelectListViewController : UITableViewController
+@interface takeTestViewController : UITableViewController
 {
     //Declare Arrays
     NSMutableArray *listOfData;

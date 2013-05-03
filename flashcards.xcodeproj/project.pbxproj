@@ -31,7 +31,7 @@
 		1218A560171F6A3C0028B97A /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 1218A55B171F6A3C0028B97A /* FMResultSet.m */; };
 		1218A564171F6AAF0028B97A /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1218A563171F6AAF0028B97A /* MessageUI.framework */; };
 		1218A56C171F6BBB0028B97A /* manageWordsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1218A56B171F6BBB0028B97A /* manageWordsViewController.m */; };
-		1218A575171F6C270028B97A /* SelectListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1218A574171F6C270028B97A /* SelectListViewController.m */; };
+		1218A575171F6C270028B97A /* takeTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1218A574171F6C270028B97A /* takeTestViewController.m */; };
 		12425087172112CB002A09ED /* homeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12425086172112CB002A09ED /* homeViewController.m */; };
 		1242508B1721149D002A09ED /* scoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1242508A1721149D002A09ED /* scoreViewController.m */; };
 		1264CFBC1720F8A90020C6EF /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 1218A561171F6A540028B97A /* libsqlite3.0.dylib */; };
@@ -77,8 +77,8 @@
 		1218A563171F6AAF0028B97A /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		1218A56A171F6BBB0028B97A /* manageWordsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = manageWordsViewController.h; sourceTree = "<group>"; };
 		1218A56B171F6BBB0028B97A /* manageWordsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = manageWordsViewController.m; sourceTree = "<group>"; };
-		1218A573171F6C270028B97A /* SelectListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectListViewController.h; sourceTree = "<group>"; };
-		1218A574171F6C270028B97A /* SelectListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectListViewController.m; sourceTree = "<group>"; };
+		1218A573171F6C270028B97A /* takeTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = takeTestViewController.h; sourceTree = "<group>"; };
+		1218A574171F6C270028B97A /* takeTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = takeTestViewController.m; sourceTree = "<group>"; };
 		12425085172112CB002A09ED /* homeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = homeViewController.h; sourceTree = "<group>"; };
 		12425086172112CB002A09ED /* homeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = homeViewController.m; sourceTree = "<group>"; };
 		124250891721149D002A09ED /* scoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scoreViewController.h; sourceTree = "<group>"; };
@@ -114,7 +114,7 @@
 				1218A568171F6B910028B97A /* manageWords */,
 				1242508817211488002A09ED /* score */,
 				FC29A969172751020057E6CD /* flashCardsSecond */,
-				1218A569171F6BA20028B97A /* selectlist */,
+				1218A569171F6BA20028B97A /* takeTest */,
 				1218A529171F628E0028B97A /* flashcards */,
 				1218A551171F6A3C0028B97A /* db */,
 				1218A522171F628E0028B97A /* Frameworks */,
@@ -200,13 +200,13 @@
 			name = manageWords;
 			sourceTree = "<group>";
 		};
-		1218A569171F6BA20028B97A /* selectlist */ = {
+		1218A569171F6BA20028B97A /* takeTest */ = {
 			isa = PBXGroup;
 			children = (
-				1218A573171F6C270028B97A /* SelectListViewController.h */,
-				1218A574171F6C270028B97A /* SelectListViewController.m */,
+				1218A573171F6C270028B97A /* takeTestViewController.h */,
+				1218A574171F6C270028B97A /* takeTestViewController.m */,
 			);
-			name = selectlist;
+			name = takeTest;
 			sourceTree = "<group>";
 		};
 		12425084172112B3002A09ED /* home */ = {
@@ -336,7 +336,7 @@
 				1218A55F171F6A3C0028B97A /* FMDatabaseQueue.m in Sources */,
 				1218A560171F6A3C0028B97A /* FMResultSet.m in Sources */,
 				1218A56C171F6BBB0028B97A /* manageWordsViewController.m in Sources */,
-				1218A575171F6C270028B97A /* SelectListViewController.m in Sources */,
+				1218A575171F6C270028B97A /* takeTestViewController.m in Sources */,
 				12425087172112CB002A09ED /* homeViewController.m in Sources */,
 				1242508B1721149D002A09ED /* scoreViewController.m in Sources */,
 				FC3D4E931731B60B0005407E /* addWordViewController.m in Sources */,

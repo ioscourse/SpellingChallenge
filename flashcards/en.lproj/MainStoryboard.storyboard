@@ -494,10 +494,10 @@
             </objects>
             <point key="canvasLocation" x="-1282" y="-1756"/>
         </scene>
-        <!--Select List View Controller-->
+        <!--Take Test View Controller-->
         <scene sceneID="uka-Qu-Zzl">
             <objects>
-                <tableViewController id="jEH-cN-3tz" customClass="SelectListViewController" sceneMemberID="viewController">
+                <tableViewController id="jEH-cN-3tz" customClass="takeTestViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="z4x-3k-muS">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -536,7 +536,7 @@
                     </tableView>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics" barStyle="blackTranslucent"/>
                     <connections>
-                        <outlet property="TableView" destination="z4x-3k-muS" id="wWZ-3E-rLE"/>
+                        <outlet property="TableView" destination="z4x-3k-muS" id="Lvt-4g-gRJ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GFW-eW-XUH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -565,71 +565,14 @@
     <resources>
         <image name="first" width="16" height="16"/>
     </resources>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="SelectListViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SelectListViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="TableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="addWordViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/addWordViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="btnAddWords:"/>
-                <relationship kind="action" name="btnDelete:"/>
-                <relationship kind="action" name="doneEditing:"/>
-                <relationship kind="action" name="playAudio:"/>
-                <relationship kind="action" name="recordAudio:"/>
-                <relationship kind="action" name="stopAudio:"/>
-                <relationship kind="outlet" name="ScrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="playAudio" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="recordAudio" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="tblView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="txtAddWords" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="createTestViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/createTestViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="btnSave:"/>
-                <relationship kind="action" name="doneEditing:"/>
-                <relationship kind="outlet" name="scrollview" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="txtListName" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="flashcardsSecondViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/flashcardsSecondViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="doneEditing:"/>
-                <relationship kind="outlet" name="ScrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="homeViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/homeViewController.h"/>
-        </class>
-        <class className="manageWordsViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/manageWordsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="btnDelete:"/>
-                <relationship kind="outlet" name="AddWordsPicker" candidateClass="UIPickerView"/>
-                <relationship kind="outlet" name="ScrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="scoreViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/scoreViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="sB1-m3-Sft"/>
-        <segue reference="syL-VY-h6P"/>
         <segue reference="Jbw-fK-SZo"/>
+        <segue reference="ODv-11-7cb"/>
+        <segue reference="sB1-m3-Sft"/>
     </inferredMetricsTieBreakers>
 </document>

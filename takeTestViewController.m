@@ -1,23 +1,23 @@
 //
-//  SelectListViewController.m
+//  takeTestViewController.m
 //  flashcards
 //
 //  Created by Charles Konkol on 4/17/13.
 //  Copyright (c) 2013 RVC Student. All rights reserved.
 //
 //Called from the 'Play Word Game' button.
-#import "SelectListViewController.h"
+#import "takeTestViewController.h"
 #import "flashcardsSecondViewController.h"
 #import "FMDatabase.h"
 #import "FMResultSet.h"
 
-@interface SelectListViewController ()
+@interface takeTestViewController ()
 {
     NSMutableArray *_objects;
 }
 @end
 
-@implementation SelectListViewController
+@implementation takeTestViewController
 
 @synthesize TableView;
 
