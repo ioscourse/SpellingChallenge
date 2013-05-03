@@ -1,21 +1,21 @@
 //
-//  AddWordsViewController.m
+//  manageWordsViewController.m
 //  flashcards
 //
 //  Created by Charles Konkol on 4/17/13.
 //  Copyright (c) 2013 RVC Student. All rights reserved.
 //
 //Called from the 'Manage Word List' button
-#import "AddWordsViewController.h"
+#import "manageWordsViewController.h"
 #import "FMDatabase.h"
 #import "FMResultSet.h"
 
-@implementation AddWordsViewController
-@synthesize txtAddWords;
+@implementation manageWordsViewController
+//@synthesize txtAddWords;
 @synthesize AddWordsPicker;
 @synthesize ScrollView;
-@synthesize playAudio;
-@synthesize recordAudio;
+//@synthesize playAudio;
+//@synthesize recordAudio;
 
 int rows;
 int intWordsID;
@@ -67,12 +67,12 @@ NSString *WordIDs;
     [AddWordsPicker reloadAllComponents];
     [AddWordsPicker selectRow:0 inComponent:0 animated:YES];
 }
--(void)dismissKeyboard {
-    [txtAddWords resignFirstResponder];
-}
--(IBAction) doneEditing:(id) sender {
-    [sender resignFirstResponder];
-}
+//-(void)dismissKeyboard {
+//    [txtAddWords resignFirstResponder];
+//}
+//-(IBAction) doneEditing:(id) sender {
+//    [sender resignFirstResponder];
+//}
 -(void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -81,7 +81,7 @@ NSString *WordIDs;
 
 -(void)dealloc {
     [AddWordsPicker release];
-    [txtAddWords release];
+//  [txtAddWords release];
     [ScrollView release];
     [super dealloc];
 }
@@ -120,6 +120,7 @@ NSString *WordIDs;
      NSLog(@"Selected Flash Card: %@. Index of selected Flash Card: %i", WordIDs, row);
     }
 }
+/*
 -(IBAction)btnAddWords:(id)sender {
     if (rows>0)
     {
@@ -156,6 +157,7 @@ NSString *WordIDs;
         [alert show];
     }
 }
+*/
 -(void) DeleteWordList
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -207,6 +209,7 @@ NSString *WordIDs;
                                           otherButtonTitles:nil];
     [alert show];
 }
+/*
 //Function to load audio file
 -(void) InitializeAudioFile:(NSString *)filename;
 {
@@ -295,24 +298,7 @@ NSString *WordIDs;
         [alert show];
     }
 }
--(IBAction)btnDelete:(id)sender
-{
-    if (rows>0)
-    {
-         [self DeleteWordList];
-         [self LoadDB];
- 
-    }
-     else
-    {
-         UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Select WordList"
-                                                         message: @"Select WordList Above"
-                                                        delegate: nil
-                                               cancelButtonTitle:@"OK"
-                                               otherButtonTitles:nil];
-         [alert show];
-    }
-}
+
 -(IBAction)stopAudio:(id)sender
 {
     if (rows>0)
@@ -328,5 +314,24 @@ NSString *WordIDs;
     }
     }
      
+}
+*/
+-(IBAction)btnDelete:(id)sender
+{
+    if (rows>0)
+    {
+        [self DeleteWordList];
+        [self LoadDB];
+        
+    }
+    else
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Select WordList"
+                                                        message: @"Select WordList Above"
+                                                       delegate: nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
 }
 @end
