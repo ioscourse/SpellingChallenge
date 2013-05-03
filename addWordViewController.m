@@ -1,18 +1,18 @@
 //
-//  testViewController.m
+//  addWordViewController.m
 //  flashcards
 //
-//  Created by Thomas Kinser on 4/26/13.
+//  Created by Thomas Kinser on 5/1/13.
 //  Copyright (c) 2013 RVC Student. All rights reserved.
 //
 
-#import "testViewController.h"
+#import "addWordViewController.h"
 
-@interface testViewController ()
+@interface addWordViewController ()
 
 @end
 
-@implementation testViewController
+@implementation addWordViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
