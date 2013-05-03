@@ -131,8 +131,7 @@ NSString *WordIDs;
         [database open];
         NSLog(@"Path: %@",@"OPenEd DB");
         NSLog(@"Path: %@",@"OPenEd trans");
-	    [database executeUpdate: @"INSERT INTO FlashWords (WordsID,Word,AudioName,NameID) VALUES (NULL,?,?,?)",
-            txtAddWords.text, @"AudioFileName", WordIDs,nil];
+	    [database executeUpdate: @"INSERT INTO FlashWords (WordsID,Word,AudioName,NameID) VALUES (NULL,?,?,?)",txtAddWords.text, @"AudioFileName", WordIDs,nil];
         intWordsID =[database lastInsertRowId];
         [self InitializeAudioFile: [NSString stringWithFormat:@"%d%@", intWordsID, @".m4a"]];
         NSLog(@"WordsID: %d",intWordsID);

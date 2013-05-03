@@ -1,5 +1,5 @@
 //
-//  flashcardsFirstViewController.h
+//  createTestViewController.h
 //  flashcards
 //
 //  Created by Charles Konkol on 4/17/13.
@@ -8,7 +8,7 @@
 //Called from the 'Add Word List' button
 #import <UIKit/UIKit.h>
 
-@interface flashcardsFirstViewController : UIViewController
+@interface createTestViewController : UIViewController
 @property (retain, nonatomic) IBOutlet UITextField *txtListName;
 @property (retain, nonatomic) IBOutlet UIScrollView *scrollview;
 -(IBAction)btnSave:(id)sender;
