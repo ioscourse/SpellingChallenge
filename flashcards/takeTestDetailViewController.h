@@ -1,5 +1,5 @@
 //
-//  flashcardsSecondViewController.h
+//  takeTestDetailViewController.h
 //  flashcards
 //
 //  Created by Charles Konkol on 4/17/13.
@@ -10,7 +10,7 @@
 #import <MessageUI/MessageUI.h>
 #import <UIKit/UIKit.h>
 
-@interface flashcardsSecondViewController : UIViewController  <AVAudioRecorderDelegate, AVAudioPlayerDelegate,UITextFieldDelegate,UIScrollViewDelegate>
+@interface takeTestDetailViewController : UIViewController  <AVAudioRecorderDelegate, AVAudioPlayerDelegate,UITextFieldDelegate,UIScrollViewDelegate>
 {
     NSString *NameID;
     AVAudioPlayer *player;

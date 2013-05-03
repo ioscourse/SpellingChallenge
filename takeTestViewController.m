@@ -7,7 +7,7 @@
 //
 //Called from the 'Play Word Game' button.
 #import "takeTestViewController.h"
-#import "flashcardsSecondViewController.h"
+#import "takeTestDetailViewController.h"
 #import "FMDatabase.h"
 #import "FMResultSet.h"
 

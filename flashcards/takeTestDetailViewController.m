@@ -6,14 +6,14 @@
 //  Copyright (c) 2013 RVC Student. All rights reserved.
 //
 // Called from SelectView Controller
-#import "flashcardsSecondViewController.h"
+#import "takeTestDetailViewController.h"
 #import "FMDatabase.h"
 #import "FMResultSet.h"
 
-@interface flashcardsSecondViewController ()
+@interface takeTestDetailViewController ()
 @end
 
-@implementation flashcardsSecondViewController
+@implementation takeTestDetailViewController
 @synthesize ScrollView;
 @synthesize NameID;
 @synthesize myButton;   

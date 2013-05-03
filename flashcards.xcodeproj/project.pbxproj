@@ -21,7 +21,7 @@
 		1218A540171F628E0028B97A /* createTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1218A53F171F628E0028B97A /* createTestViewController.m */; };
 		1218A542171F628E0028B97A /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 1218A541171F628E0028B97A /* first.png */; };
 		1218A544171F628E0028B97A /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1218A543171F628E0028B97A /* first@2x.png */; };
-		1218A547171F628E0028B97A /* flashcardsSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1218A546171F628E0028B97A /* flashcardsSecondViewController.m */; };
+		1218A547171F628E0028B97A /* takeTestDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1218A546171F628E0028B97A /* takeTestDetailViewController.m */; };
 		1218A549171F628E0028B97A /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 1218A548171F628E0028B97A /* second.png */; };
 		1218A54B171F628E0028B97A /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1218A54A171F628E0028B97A /* second@2x.png */; };
 		1218A55C171F6A3C0028B97A /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 1218A553171F6A3C0028B97A /* FMDatabase.m */; };
@@ -59,8 +59,8 @@
 		1218A53F171F628E0028B97A /* createTestViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = createTestViewController.m; path = flashcards/createTestViewController.m; sourceTree = "<group>"; };
 		1218A541171F628E0028B97A /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		1218A543171F628E0028B97A /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		1218A545171F628E0028B97A /* flashcardsSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = flashcardsSecondViewController.h; path = flashcards/flashcardsSecondViewController.h; sourceTree = "<group>"; };
-		1218A546171F628E0028B97A /* flashcardsSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = flashcardsSecondViewController.m; path = flashcards/flashcardsSecondViewController.m; sourceTree = "<group>"; };
+		1218A545171F628E0028B97A /* takeTestDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = takeTestDetailViewController.h; path = flashcards/takeTestDetailViewController.h; sourceTree = "<group>"; };
+		1218A546171F628E0028B97A /* takeTestDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = takeTestDetailViewController.m; path = flashcards/takeTestDetailViewController.m; sourceTree = "<group>"; };
 		1218A548171F628E0028B97A /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		1218A54A171F628E0028B97A /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		1218A552171F6A3C0028B97A /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
@@ -113,7 +113,7 @@
 				FC3D4E901731B5E00005407E /* addWord */,
 				1218A568171F6B910028B97A /* manageWords */,
 				1242508817211488002A09ED /* score */,
-				FC29A969172751020057E6CD /* flashCardsSecond */,
+				FC29A969172751020057E6CD /* takeTestDetail */,
 				1218A569171F6BA20028B97A /* takeTest */,
 				1218A529171F628E0028B97A /* flashcards */,
 				1218A551171F6A3C0028B97A /* db */,
@@ -236,13 +236,13 @@
 			name = createTest;
 			sourceTree = "<group>";
 		};
-		FC29A969172751020057E6CD /* flashCardsSecond */ = {
+		FC29A969172751020057E6CD /* takeTestDetail */ = {
 			isa = PBXGroup;
 			children = (
-				1218A545171F628E0028B97A /* flashcardsSecondViewController.h */,
-				1218A546171F628E0028B97A /* flashcardsSecondViewController.m */,
+				1218A545171F628E0028B97A /* takeTestDetailViewController.h */,
+				1218A546171F628E0028B97A /* takeTestDetailViewController.m */,
 			);
-			name = flashCardsSecond;
+			name = takeTestDetail;
 			sourceTree = "<group>";
 		};
 		FC3D4E901731B5E00005407E /* addWord */ = {
@@ -329,7 +329,7 @@
 				1218A530171F628E0028B97A /* main.m in Sources */,
 				1218A534171F628E0028B97A /* flashcardsAppDelegate.m in Sources */,
 				1218A540171F628E0028B97A /* createTestViewController.m in Sources */,
-				1218A547171F628E0028B97A /* flashcardsSecondViewController.m in Sources */,
+				1218A547171F628E0028B97A /* takeTestDetailViewController.m in Sources */,
 				1218A55C171F6A3C0028B97A /* FMDatabase.m in Sources */,
 				1218A55D171F6A3C0028B97A /* FMDatabaseAdditions.m in Sources */,
 				1218A55E171F6A3C0028B97A /* FMDatabasePool.m in Sources */,
