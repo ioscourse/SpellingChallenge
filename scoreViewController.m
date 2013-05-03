@@ -1,18 +1,18 @@
 //
-//  gameViewController.m
+//  scoreViewController.m
 //  flashcards
 //
 //  Created by Charles Konkol on 4/19/13.
 //  Copyright (c) 2013 RVC Student. All rights reserved.
 //
 //Called from 'Score Board' button
-#import "gameViewController.h"
+#import "scoreViewController.h"
 
-@interface gameViewController ()
+@interface scoreViewController ()
 
 @end
 
-@implementation gameViewController
+@implementation scoreViewController
 
 -(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

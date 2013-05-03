@@ -1,5 +1,5 @@
 //
-//  gameViewController.h
+//  scoreViewController.h
 //  flashcards
 //
 //  Created by Charles Konkol on 4/19/13.
@@ -8,6 +8,6 @@
 //Called from 'Score Board' button
 #import <UIKit/UIKit.h>
 
-@interface gameViewController : UIViewController
+@interface scoreViewController : UIViewController
 
 @end
