@@ -77,8 +77,9 @@ UITextField * textFieldRounded;
         [self.myButton setTitle:@"Press"
                        forState:UIControlStateNormal];
         //set the button title for when the finger is pressing it down
-        [self.myButton setTitle:Word
-                       forState:UIControlStateHighlighted];
+        /*[self.myButton setTitle:Word
+                         forState:UIControlStateHighlighted];
+        */
         //add action to capture the button press down event
         [self.myButton addTarget:self
                           action:@selector(buttonIsPressed:)
@@ -109,7 +110,6 @@ UITextField * textFieldRounded;
         
         textFieldRounded.returnKeyType = UIReturnKeyDone;  // typing return key
         
-        // This displays the 'word' when the button is pressed down
         textFieldRounded.accessibilityIdentifier = Word;
         
         textFieldRounded.clearButtonMode = UITextFieldViewModeWhileEditing; // has a clear ‘x’ button to the right
@@ -267,12 +267,14 @@ UITextField * textFieldRounded;
 }
 -(void) audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
 {
+    /*
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Got it?"
                                                     message: @"Now, Type in Word"
                                                    delegate: nil
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil];
     [alert show];
+    */
 }
 -(void) PlayAudio;
 {

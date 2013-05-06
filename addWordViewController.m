@@ -96,7 +96,7 @@ int intWordsID;
         
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Record Time"
-                                                        message: @"Now, Press Record and Speak the Name"
+                                                        message: @"Now, Press 'Record' and Speak the Name.  Press 'Stop' when Finished."
                                                        delegate: nil
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
@@ -160,7 +160,7 @@ int intWordsID;
 }
 - (void) audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Done"
-                                                    message: @"Recording Successful!"
+                                                    message: @"Recording Successful!.  Press 'Record' again to redo recording, otherwise type in new word to add another word or press 'Done' to complete adding this word list."
                                                    delegate: nil
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil];

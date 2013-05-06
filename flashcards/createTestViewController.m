@@ -54,12 +54,13 @@ int nameID;
     NSLog(@"database table updated with %@",txtListName);
     txtListName.text = @"";
     NSLog(@"Create Test View - Location 1");
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Success"
+    /*UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Success"
                                                     message: @"Word List Added!"
                                                    delegate: nil
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil];
     [alert show];
+    */ 
 }
 
 -(IBAction) doneEditing:(id) sender

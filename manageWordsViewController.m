@@ -27,10 +27,12 @@ NSString *WordIDs;
     [super viewDidLoad];
     [self LoadDB];
     // Do any additional setup after loading the view.
+    /*
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
                                    initWithTarget:self
                                    action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:tap];
+     */
 }
 -(void)LoadDB
 {
@@ -113,12 +115,12 @@ NSString *WordIDs;
 }
 //PickerViewController.m
 -(void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    if (!row==0)
-    {
+    //if (!row==0)
+    //{
      rows=row;
      WordIDs=[listOfNameID objectAtIndex:row];
      NSLog(@"Selected Flash Card: %@. Index of selected Flash Card: %i", WordIDs, row);
-    }
+    //}
 }
 /*
 -(IBAction)btnAddWords:(id)sender {
