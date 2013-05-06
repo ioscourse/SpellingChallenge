@@ -11,11 +11,8 @@
 #import "FMResultSet.h"
 
 @implementation manageWordsViewController
-//@synthesize txtAddWords;
 @synthesize AddWordsPicker;
 @synthesize ScrollView;
-//@synthesize playAudio;
-//@synthesize recordAudio;
 
 int rows;
 int intWordsID;
@@ -26,13 +23,6 @@ NSString *WordIDs;
 {
     [super viewDidLoad];
     [self LoadDB];
-    // Do any additional setup after loading the view.
-    /*
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
-                                   initWithTarget:self
-                                   action:@selector(dismissKeyboard)];
-    [self.view addGestureRecognizer:tap];
-     */
 }
 -(void)LoadDB
 {
@@ -46,7 +36,6 @@ NSString *WordIDs;
     FMDatabase *database = [FMDatabase databaseWithPath:path];
     [database open];
     NSLog(@"Path: %@",path);
-    // ?? next line
     [database beginTransaction];
     NSLog(@"Path: %@",@"OPenEd DB");
 	// Do any additional setup after loading the view, typically from a nib.
@@ -69,12 +58,7 @@ NSString *WordIDs;
     [AddWordsPicker reloadAllComponents];
     [AddWordsPicker selectRow:0 inComponent:0 animated:YES];
 }
-//-(void)dismissKeyboard {
-//    [txtAddWords resignFirstResponder];
-//}
-//-(IBAction) doneEditing:(id) sender {
-//    [sender resignFirstResponder];
-//}
+
 -(void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -83,7 +67,6 @@ NSString *WordIDs;
 
 -(void)dealloc {
     [AddWordsPicker release];
-//  [txtAddWords release];
     [ScrollView release];
     [super dealloc];
 }
@@ -114,52 +97,13 @@ NSString *WordIDs;
     return [listOfData objectAtIndex:row];
 }
 //PickerViewController.m
--(void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    //if (!row==0)
-    //{
+-(void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
      rows=row;
      WordIDs=[listOfNameID objectAtIndex:row];
      NSLog(@"Selected Flash Card: %@. Index of selected Flash Card: %i", WordIDs, row);
-    //}
 }
-/*
--(IBAction)btnAddWords:(id)sender {
-    if (rows>0)
-    {
-        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-        NSString *docsPath = [paths objectAtIndex:0];
-        NSString *path = [docsPath stringByAppendingPathComponent:@"cards.sqlite"];
-        NSLog(@"Path: %@",path);
-        FMDatabase *database = [FMDatabase databaseWithPath:path];
-        [database open];
-        NSLog(@"Path: %@",@"OPenEd DB");
-        NSLog(@"Path: %@",@"OPenEd trans");
-	    [database executeUpdate: @"INSERT INTO FlashWords (WordsID,Word,AudioName,NameID) VALUES (NULL,?,?,?)",txtAddWords.text, @"AudioFileName", WordIDs,nil];
-        intWordsID =[database lastInsertRowId];
-        [self InitializeAudioFile: [NSString stringWithFormat:@"%d%@", intWordsID, @".m4a"]];
-        NSLog(@"WordsID: %d",intWordsID);
-        [database close];
-        txtAddWords.Text =@"";
-        [self dismissKeyboard];
-        
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Record Time"
-                                                        message: @"Now, Press Record and Speak the Name"
-                                                       delegate: nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
-    }
-    else
-    {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Select WordList"
-                                                        message: @"Select WordList Above"
-                                                       delegate: nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
-    }
-}
-*/
+
 -(void) DeleteWordList
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -211,113 +155,7 @@ NSString *WordIDs;
                                           otherButtonTitles:nil];
     [alert show];
 }
-/*
-//Function to load audio file
--(void) InitializeAudioFile:(NSString *)filename;
-{
-    // Disable Stop/Play button when application launches
-    [playAudio setEnabled:NO];
-    
-    // Set the audio file
-    NSArray *pathComponents = [NSArray arrayWithObjects:
-                               [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],filename,nil];
-    NSURL *outputFileURL = [NSURL fileURLWithPathComponents:pathComponents];
-    FilePath=[outputFileURL absoluteString];
-    
-    // Setup audio session
-    AVAudioSession *session = [AVAudioSession sharedInstance];
-    [session setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
-    
-    // Define the recorder setting
-    NSMutableDictionary *recordSetting = [[NSMutableDictionary alloc] init];
-    
-    [recordSetting setValue:[NSNumber numberWithInt:kAudioFormatMPEG4AAC] forKey:AVFormatIDKey];
-    [recordSetting setValue:[NSNumber numberWithFloat:44100.0] forKey:AVSampleRateKey];
-    [recordSetting setValue:[NSNumber numberWithInt: 2] forKey:AVNumberOfChannelsKey];
-    
-    // Initiate and prepare the recorder
-    recorder = [[AVAudioRecorder alloc] initWithURL:outputFileURL settings:recordSetting error:NULL];
-    recorder.delegate = self;
-    recorder.meteringEnabled = YES;
-    [recorder prepareToRecord];
-}
-//Audio
--(void) audioRecorderDidFinishRecording:(AVAudioRecorder *)avrecorder successfully:(BOOL)flag{
-    [recordAudio setTitle:@"Record" forState:UIControlStateNormal];
-    [playAudio setEnabled:YES];
-}
--(void) audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Done"
-                                                    message: @"Recording Successful!"
-                                                   delegate: nil
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
-    [alert show];
-}
--(IBAction)playAudio:(id)sender
-{
-    if (!recorder.recording){
-        player = [[AVAudioPlayer alloc] initWithContentsOfURL:recorder.url error:nil];
-        [player setDelegate:self];
-        [player play];
-    }
-}
--(IBAction)recordAudio:(id)sender
-{
-    if (rows>0)
-    {
-         // Stop the audio player before recording
-    if (player.playing)
-    {
-        [player stop];
-    }
-    
-    if (!recorder.recording)
-    {
-        AVAudioSession *session = [AVAudioSession sharedInstance];
-        [session setActive:YES error:nil];
-        
-        // Start recording
-        [recorder record];
-        [recordAudio setTitle:@"Pause" forState:UIControlStateNormal];
-    }
-    else
-    {
-        // Pause recording
-        [recorder pause];
-        [recordAudio setTitle:@"Record" forState:UIControlStateNormal];
-    }
 
-        [playAudio setEnabled:NO];
-    }
-    else
-    {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Select WordList"
-                                                        message: @"Select WordList Above"
-                                                       delegate: nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
-    }
-}
-
--(IBAction)stopAudio:(id)sender
-{
-    if (rows>0)
-    {
-         [recorder stop];
-    //AVAudioSession *audioSession = [AVAudioSession sharedInstance];
-    //[audioSession setActive:NO error:nil];
-    if (!recorder.recording)
-    {
-        player = [[AVAudioPlayer alloc] initWithContentsOfURL:recorder.url error:nil];
-        [player setDelegate:self];
-        [player play];
-    }
-    }
-     
-}
-*/
 -(IBAction)btnDelete:(id)sender
 {
     if (rows>0)

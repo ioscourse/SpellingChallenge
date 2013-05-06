@@ -157,7 +157,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WrE-lj-L04">
                                 <items>
                                     <navigationItem title="Manage" id="miZ-oX-Oke">
-                                        <barButtonItem key="leftBarButtonItem" title="Home" id="Kae-p6-loj">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="Kae-p6-loj">
                                             <connections>
                                                 <segue destination="2" kind="modal" id="rd1-0u-38c"/>
                                             </connections>
@@ -197,7 +197,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nnz-s7-sY4">
                                 <items>
                                     <navigationItem title="Game Scores" id="P61-pE-Jvk">
-                                        <barButtonItem key="rightBarButtonItem" title="Home" id="xve-IC-gvk">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="xve-IC-gvk">
                                             <connections>
                                                 <segue destination="2" kind="modal" id="syL-VY-h6P"/>
                                             </connections>
@@ -286,7 +286,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Tu-4Z-blR">
                                 <items>
                                     <navigationItem title="Create Spelling Test" id="D33-bR-QTO">
-                                        <barButtonItem key="rightBarButtonItem" title="Home" id="a8l-0d-JBm">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="a8l-0d-JBm">
                                             <connections>
                                                 <segue destination="2" kind="modal" id="lpR-ut-jPl"/>
                                             </connections>
@@ -506,7 +506,7 @@
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <items>
                                 <navigationItem title="Select WordList" id="SXH-yJ-GOK">
-                                    <barButtonItem key="leftBarButtonItem" title="Home" id="fYL-67-dez">
+                                    <barButtonItem key="leftBarButtonItem" title="Back" id="fYL-67-dez">
                                         <connections>
                                             <segue destination="2" kind="modal" id="ODv-11-7cb"/>
                                         </connections>
@@ -627,8 +627,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="5PX-KZ-5HS"/>
-        <segue reference="sB1-m3-Sft"/>
+        <segue reference="ODv-11-7cb"/>
         <segue reference="hqc-JD-Yth"/>
+        <segue reference="9ez-10-sUR"/>
     </inferredMetricsTieBreakers>
 </document>

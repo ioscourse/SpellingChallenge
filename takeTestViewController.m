@@ -89,15 +89,7 @@
     NSLog(@"SelectList ViewController cell.textLabel.text value: %@",cell);
     return cell;
 }
-/* Not sure what this code does - did not write to NSLog so I commented it out.
-#pragma mark - Table view delegate
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSLog(@"SelectList ViewController tableView Section Row Selected = %i",indexPath.row);
-    
-}
-*/
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     @try

@@ -32,15 +32,10 @@ UITextField * textFieldRounded;
     FMDatabase *database = [FMDatabase databaseWithPath:path];
     [database open];
 	// Do any additional setup after loading the view, typically from a nib.
-    // NSString *WherePath = NameID;
-    // NSString *sql = @"SELECT * FROM FlashWords WHERE NameID =";
     NSString *sql = [NSString stringWithFormat:@"SELECT * FROM FlashWords WHERE NameID = %@", NameID];
-    
-    //FMResultSet *results = [database executeQuery:sql, WherePath];
     FMResultSet *results = [database executeQuery:sql];
     NSLog(@"2nd View Controller results value %@",results);
     NSLog(@"2nd View Controller sql: %@",NameID);
-    // FMResultSet *results = [database executeQuery:@"select * from MyWords where NameID= "@NameID];
     CGFloat row=0;
     while([results next])
         {
@@ -267,14 +262,6 @@ UITextField * textFieldRounded;
 }
 -(void) audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
 {
-    /*
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Got it?"
-                                                    message: @"Now, Type in Word"
-                                                   delegate: nil
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
-    [alert show];
-    */
 }
 -(void) PlayAudio;
 {

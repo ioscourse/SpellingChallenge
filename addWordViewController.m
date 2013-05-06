@@ -12,7 +12,6 @@
 #import "FMResultSet.h"
 @implementation addWordViewController
 @synthesize txtAddWords;
-//@synthesize AddWordsPicker;
 @synthesize ScrollView;
 @synthesize playAudio;
 @synthesize recordAudio;
